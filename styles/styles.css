@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    width: 100%;
+    margin: 20vh 20vw;
+    display: flex;
+}
+
+section {
+    position: relative;
+    border: 1px solid red;
+}
+
+h1 {
+    text-transform: lowercase;
+    font-size: 20px;
+    margin: 50px 0;
+    letter-spacing: -6px;
+    font-size: 120px;
+    line-height: 80%;
+    color: #282828;
+    margin-top: 70px;
+    width: 500px;
+}
+
+
+.glitter {
+    width: 400px;
+    height: 340px;
+    position: absolute;
+    bottom: -100px;
+    left: 400px;
+    background-color: #d2ced2;
+    background-image: url("../images/glitter.gif");
+    background-size: contain;
+       
+    background-blend-mode: screen;
+    -webkit-mask-image: url(../images/splash1.svg);
+    mask-image: url(../images/splash1.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    z-index: 10;
+    -webkit-mask-size: contain;
+}
+
+.glitter-shadow {
+    width: 400px;
+    height: 340px;
+    left: 400px;
+    bottom: -100px;
+    position: absolute;
+
+
+
+}
+
+
+.glitter-shadow::before { /*dlaczego maska zostala uzyta na elemencie before i do czego tu sluzy*/
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 340px;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+    left: -20px;
+    top: 10px;
+    -webkit-mask-image: url("../images/splash1.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+}
+
+
